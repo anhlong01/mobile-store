@@ -609,7 +609,7 @@ footer a p:hover{
   }
 
 .cart-item-summary{
-	width: 50%;
+	width: 100%;
 	padding-top: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -647,3 +647,24 @@ hr{
 	border-width: 1.5px;
 	border-color: #8a2b06;
 }
+
+
+
+.cart-item-action button{
+	all: unset;
+	font-weight: bold;
+    font-size: 1.25rem;
+    color: #8a2b06;
+    border: 1px solid #8a2b06;
+    width: 3rem;
+    text-align: center;
+    border-radius: 6px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cart-item-action button:hover{
+	color: white;
+	background-color: #8a2b06;
+}
+

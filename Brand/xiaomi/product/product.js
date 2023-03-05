@@ -8,7 +8,8 @@ const modal2 = document.querySelectorAll(".modal-overlay")[1];
 const closeBtn2 = document.querySelectorAll(".close-btn")[1];
 const name = document.getElementById("#product-name");
 const amount = document.querySelector(".amount");
-const money = document.getElementById("money")
+const money = document.getElementById("money");
+const plus = document.getElementById("plus");
 
 if(count==0){
     cartBtn.addEventListener("click", function(){
@@ -29,10 +30,34 @@ btn.addEventListener("click", function(){
         let price = count*5490000;
         money.textContent = price.toLocaleString('en') + "đ";
         modal2.classList.add("open-modal");
-        modal.classList.remove("open-modal");
-      
+        modal.classList.remove("open-modal");    
+    })
+
+    plus.addEventListener("click", function(){
+        count++;
+        badge.textContent = count;
+        amount.textContent = "x" + count;
+        let price = count*5490000;
+        money.textContent = price.toLocaleString('en') + "đ";
     })
     
+    minus.addEventListener("click", function(){
+        count--;
+        badge.textContent = count;
+        amount.textContent = "x" + count;
+        let price = count*5490000;
+        money.textContent = price.toLocaleString('en') + "đ";
+
+        if(count==0){
+            modal2.classList.remove("open-modal");
+            modal.classList.add("open-modal");  
+        closeBtn.addEventListener("click", function(){
+            modal.classList.remove("open-modal");
+        })
+    }
+    })
+
+
     closeBtn2.addEventListener("click", function(){
         modal2.classList.remove("open-modal");
     })
